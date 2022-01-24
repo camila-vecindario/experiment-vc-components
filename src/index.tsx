@@ -1,12 +1,12 @@
 import * as React from 'react'
-import styles from './styles.module.css'
+import './styles.scss'
 
 interface Props {
   text: string
 }
 
 export const ExampleComponent = ({ text }: Props) => {
-  return <div className={styles.test}>Example Component: {text} - HOLA</div>
+  return <div className='test'>Example Component: {text} - HOLA</div>
 }
 
 export * from './form';

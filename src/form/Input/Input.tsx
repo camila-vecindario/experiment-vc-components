@@ -1,12 +1,12 @@
 import React from "react";
-import './input.css'
+import './Input.scss'
 
 type Props = {
   type: string;
 }
 
 const Input = ({ type }: Props) => {
-  return <input type={type} className='input' />
+  return <input  className='input' />
 };
 
 export default Input;
