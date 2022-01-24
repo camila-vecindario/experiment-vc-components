@@ -1,12 +1,10 @@
-import React from "react";
+import React, { HTMLProps } from 'react'
 import './Input.scss'
 
-type Props = {
-  type: string;
+interface Props extends HTMLProps<HTMLInputElement> {
+  type: string
 }
 
-const Input = ({ type }: Props) => {
-  return <input  className='input' />
-};
+const Input = (props: Props) => <input className='input' {...props} />
 
-export default Input;
+export default Input
