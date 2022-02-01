@@ -36,11 +36,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./storybook-static
       - name: deploy storybook if testing
-          if: ${{ github.ref == 'refs/heads/testing' }}
-          uses: nwtgck/actions-netlify@v1.2
-          with:
-            publish_dir: ./storybook-static
-            NETLIFY_AUTH_TOKEN: ${{secrets.NETLIFY_TOKEN}}
-            NETLIFY_SITE_ID: ${{secrets.NETLIFY_SITE_ID}}
-
+        if: ${{ github.ref == 'refs/heads/testing' }}
+        uses: nwtgck/actions-netlify@v1.2
+        with:
+          publish_dir: ./storybook-static
+          NETLIFY_AUTH_TOKEN: ${{secrets.NETLIFY_TOKEN}}
+          NETLIFY_SITE_ID: ${{secrets.NETLIFY_SITE_ID}}
 
