@@ -25,3 +25,9 @@ Red.args = {
   placeholder: "Red",
   style: {backgroundColor: 'red'}
 };
+
+export const Blue = Template.bind({});
+Blue.args = {
+  placeholder: "Red",
+  style: {backgroundColor: 'blue'}
+};
