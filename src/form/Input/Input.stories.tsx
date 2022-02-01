@@ -19,3 +19,9 @@ Rounded.args = {
   placeholder: "Rounded",
   style: {borderRadius: '1rem'}
 };
+
+export const Red = Template.bind({});
+Red.args = {
+  placeholder: "Red",
+  style: {backgroundColor: 'red'}
+};
