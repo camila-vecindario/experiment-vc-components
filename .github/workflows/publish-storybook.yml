@@ -17,6 +17,10 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '14.x'
+      - name: Github author authentication
+        run: |
+          git config --global user.name github-actions
+          git config --global user.email github-actions@github.com
       - name: install dependencies
         run: yarn install
         env:
@@ -41,5 +45,5 @@ jobs:
           mv -v ./storybook-static/* .
           git add .
           git commit -m ${{env.PR_NAME}}
-          git push
+          git push origin storybook-pre-${{env.PR_NAME}}
 
