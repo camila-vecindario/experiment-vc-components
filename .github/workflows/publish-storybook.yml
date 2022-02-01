@@ -27,13 +27,14 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-      - name: deploy storybook if main
-        if: ${{ github.ref == 'refs/heads/main' }}
+      - name: deploy storybook if testing
+        if: ${{ github.ref == 'refs/heads/testing' }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./storybook-static
       - name: deploy storybook on pr
+        if: ${{ github.ref != 'refs/heads/testing' }}
         run: |
           git checkout -b storybook-pre-${{env.PR_NAME}}
           git rm -r --ignore-unmatch *
