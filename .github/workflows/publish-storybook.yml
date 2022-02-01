@@ -45,5 +45,5 @@ jobs:
           mv -v ./storybook-static/* .
           git add .
           git commit -m ${{env.PR_NAME}}
-          git push custom storybook-pre-${{env.PR_NAME}}
+          git push origin storybook-pre-${{env.PR_NAME}}
 
