@@ -7,6 +7,8 @@ on:
     branches:
       - main
       - testing
+env:
+  PR_NAME: ${{ github.event.pull_request.node_id }}
 
 jobs:
   build-and-deploy:
@@ -27,7 +29,8 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           NPM_TOKEN: ${{secrets.NPM_TOKEN}}
-      - name: deploy storybook
+      - name: deploy storybook if main
+        if: ${{ github.ref == 'refs/heads/main' }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
