@@ -41,6 +41,7 @@ jobs:
       - name: deploy storybook on pr
         if: ${{ github.ref != 'refs/heads/testing' }}
         run: |
+          git fetch --unshallow origin
           git checkout -b ${{env.BRANCH_NAME}}
           git rm -r --ignore-unmatch *
           mv -v ./storybook-static/* .
