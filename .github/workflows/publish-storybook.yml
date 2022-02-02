@@ -50,6 +50,6 @@ jobs:
       - name: Comment pr
         uses: thollander/actions-comment-pull-request@v1
         with:
-          message: 'Preview deploy https://storybook-pre-pr-kwdogxlkqs4x8quv.${{env.PR_NAME}}.${{env.HOST}}'
+          message: 'Preview deploy https://storybook-pre-${{env.PR_NAME}}.${{env.HOST}}'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
