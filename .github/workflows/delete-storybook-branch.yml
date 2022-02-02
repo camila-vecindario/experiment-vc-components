@@ -4,7 +4,7 @@ on:
       - testing
     types: [closed]
 env:
-  PR_NAME: ${{ github.event.pull_request.number }}
+  BRANCH_NAME: storybook-preview-${{ github.event.pull_request.number }}
 jobs:
   delete-branch:
     runs-on: ubuntu-latest
@@ -19,4 +19,4 @@ jobs:
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
       - name: Delete pr branch
-        run: git push origin --delete storybook-preview-${{env.PR_NAME}}
+        run: git push origin --delete storybook-preview-${{env.BRANCH_NAME}}
