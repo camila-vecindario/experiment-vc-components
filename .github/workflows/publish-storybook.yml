@@ -46,7 +46,7 @@ jobs:
           mv -v ./storybook-static/* .
           git add .
           git commit -m ${{env.PR_NAME}}
-          git push origin storybook-pre-${{env.PR_NAME}}
+          git push -f origin storybook-pre-${{env.PR_NAME}}
       - name: Comment pr
         uses: thollander/actions-comment-pull-request@v1
         with:
