@@ -4,7 +4,7 @@ on:
       - testing
     types: [closed]
 env:
-  PR_NAME: ${{ github.event.pull_request.node_id }}
+  PR_NAME: ${{ github.event.pull_request.number }}
 jobs:
   delete-branch:
     runs-on: ubuntu-latest
