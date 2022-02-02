@@ -19,4 +19,4 @@ jobs:
           git config --global user.name github-actions
           git config --global user.email github-actions@github.com
       - name: Delete pr branch
-        run: git push origin --delete storybook-pre-${{env.PR_NAME}}
+        run: git push origin --delete storybook-preview-${{env.PR_NAME}}
